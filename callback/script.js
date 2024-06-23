@@ -29,8 +29,18 @@ document.addEventListener("DOMContentLoaded", function() {
             .then((response) => response.json())
             .then((result) => {
                 console.log(result);
-                messageElement.textContent = `Access code: ${code} \n Refresh token: ${result.refresh_token}`;
-
+                messageElement.textContent = `Access code: ${code} \nRefresh token: ${result.refresh_token}`;
+                
+                copyButton.style.display = 'inline-block';
+                copyButton.addEventListener('click', function() {
+                    navigator.clipboard.writeText(result.refresh_token)
+                        .then(() => {
+                            alert('Refresh token copied to clipboard!');
+                        })
+                        .catch((err) => {
+                            console.error('Failed to copy token: ', err);
+                        });
+                });
             })
             .catch((error) => {
                 console.error(error);

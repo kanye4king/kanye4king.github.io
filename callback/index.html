@@ -19,12 +19,22 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(190, 189, 189, 0.1);
         }
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            color:blue;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(190, 189, 189, 0.1);
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Callback Page</h1>
         <p id="message">Waiting for auth</p>
+        <button id="copyButton" style="display: none;">Copy Refresh Token</button>
     </div>
     <script src="script.js"></script>
 </body>
