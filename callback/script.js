@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
             .then((result) => {
                 console.log(result);
                 messageElement.textContent = `Access code: ${code} \nRefresh token: ${result.refresh_token}`;
-                if(refresh_token != undefined){
+                if(result.refresh_token != undefined){
                     copyButton.style.display = 'inline-block';
                     copyButton.addEventListener('click', function() {
                         navigator.clipboard.writeText(result.refresh_token);
