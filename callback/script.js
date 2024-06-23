@@ -33,13 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 
                 copyButton.style.display = 'inline-block';
                 copyButton.addEventListener('click', function() {
-                    navigator.clipboard.writeText(result.refresh_token)
-                        .then(() => {
-                            alert('Refresh token copied to clipboard!');
-                        })
-                        .catch((err) => {
-                            console.error('Failed to copy token: ', err);
-                        });
+                    navigator.clipboard.writeText(result.refresh_token);
                 });
             })
             .catch((error) => {
